@@ -1,0 +1,52 @@
+{
+    "name": "missing-pkgs-installer",
+    "displayName": "JS Package Installer",
+    "description": "Installs npm packages used in the current JS file.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.70.0"
+    },
+    "activationEvents": [
+        "onView:jsInstallerView",
+        "onCommand:extension.installDependencies"
+    ],
+    "main": "./dist/extension.js",
+    "scripts": {
+        "compile": "npx tsc -p ./",
+        "vscode:prepublish": "npm run compile",
+        "package": "mkdir -p build && vsce package --out build/missing-pkgs-installer.vsix"
+    },
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.installDependencies",
+                "title": "Install NPM Packages in Current File"
+            }
+        ],
+        "viewsContainers": {
+            "activitybar": [
+                {
+                    "id": "jsInstaller",
+                    "title": "NPM Installer",
+                    "icon": "resources/cloud-download.svg"
+                }
+            ]
+        },
+        "views": {
+            "jsInstaller": [
+                {
+                    "id": "jsInstallerView",
+                    "name": "Install Packages"
+                }
+            ]
+        }
+    },
+    "devDependencies": {
+        "@types/node": "^18.0.0",
+        "typescript": "^4.0.0",
+        "vscode": "^1.1.37"
+    },
+    "dependencies": {
+        "axios": "^1.8.4"
+    }
+}
