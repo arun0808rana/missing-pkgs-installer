@@ -3,6 +3,7 @@
     "displayName": "JS Package Installer",
     "description": "Installs npm packages used in the current JS file.",
     "version": "0.0.1",
+    "repository":"https://github.com/arun0808rana/missing-pkgs-installer.git",
     "engines": {
         "vscode": "^1.70.0"
     },
