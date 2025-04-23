@@ -1,10 +1,12 @@
 # Missing NPM Packages Installer
 
+![Alt text](resources/Screenshot.png)
+
+**Note: Make sure the current file that has missing-pkgs mentioned, is in `active view/currently opened` in vscode (step 1).**
+
 A simple VS Code / VSCodium extension that scans the currently open JavaScript/Typescript file for `import` and `require` statements and installs any missing external npm packages with a single click from an Activity Bar(vs-code-sidebar) icon.
 
-
 ---
-
 
 ## Features
 
@@ -17,9 +19,7 @@ A simple VS Code / VSCodium extension that scans the currently open JavaScript/T
 - **Scoped / deep imports**  
   Detects both top-level (e.g. `lodash`) and scoped packages (e.g. `@babel/core`).
 
-
 ---
-
 
 ## Prerequisites
 
@@ -29,7 +29,6 @@ A simple VS Code / VSCodium extension that scans the currently open JavaScript/T
 
 ---
 
-
 ## Installation
 
 ```bash
@@ -37,10 +36,7 @@ A simple VS Code / VSCodium extension that scans the currently open JavaScript/T
    cd missing-pkgs-installer
 ```
 
-
 ---
-
-
 
 ## Generating an extension(.vsix file) from this repo
 
@@ -50,3 +46,14 @@ npm run compile
 npm run package
 ```
 
+## Installing the package
+
+- Inside `build` folder right click on the `missing-pkgs-installer.vsix` file and select the `Install extension VSIX` from the context menu.
+
+---
+
+## Example
+
+![Alt text](resources/Screenshot.png)
+
+In the above example `extension.ts` file has `axios` mentioned in the code. But its not installed. Click on the `icon` (step 2). Then click on the `Install Packages` option on the sidebar(step 3);
